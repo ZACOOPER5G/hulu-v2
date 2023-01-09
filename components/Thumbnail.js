@@ -4,7 +4,7 @@ import React from "react";
 
 const Thumbnail = ({ result }) => {
 	return (
-		<div className="group cursor-pointer p-2 transition duration-200 ease-in transform sm:hover:scale-105 hover:z-50">
+		<div className="group cursor-pointer p-2 transition duration-200 ease-in transform sm:hover:scale-105 hover:z-50 max-w-md">
 			<Image
 				layout="responsive"
 				src={
@@ -13,7 +13,7 @@ const Thumbnail = ({ result }) => {
 				}
 				width={1920}
 				height={1080}
-				alt="film poster"
+				alt={ result.backdrop_path === null || result.poster_path === null ? "Film poster not available" : "film poster" }
 			/>
 			<div className="p-2">
 				<p className="truncate max-w-md">{result.overview}</p>
